@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+<!-- Фірмова форма «п'ятикутник» (брендбук с. 35–36) як clipPath в objectBoundingBox: .photo { clip-path: url(#gz-clip-pentagon); } -->
+<defs>
+  <clipPath id="gz-clip-product-card" clipPathUnits="objectBoundingBox"><path transform="scale(.003164556962 .003125)" d="M0 88Q0 72 16 69L297 17Q316 13 316 33V300Q316 320 296 320H20Q0 320 0 300Z"/></clipPath>
+  <clipPath id="gz-clip-bottle" clipPathUnits="objectBoundingBox"><path d="M.35 .19L.36 .06Q.36 .009 .5 .009Q.64 .009 .64 .06L.66 .19Q.79 .19 .81 .21L.81 .30L.84 .305L.84 .355Q.84 .369 .80 .371Q.96 .404 .96 .465L.96 .955Q.96 .994 .50 .994Q.025 .994 .025 .955L.03 .465Q.03 .407 .20 .371Q.16 .367 .16 .35L.16 .308L.20 .302L.20 .215Q.21 .19 .35 .19Z"/></clipPath>
+  <clipPath id="gz-clip-product-photo" clipPathUnits="objectBoundingBox"><path d="M0 .10Q0 .05 .045 .042L.95 .002Q1 0 1 .05V.88Q1 .92 .955 .93L.05 .998Q0 1 0 .95Z"/></clipPath>
+  <clipPath id="gz-clip-product-faq" clipPathUnits="objectBoundingBox"><path d="M.04 0H.96Q1 0 1 .05V.8Q1 .85 .96 .86L.30 .997Q.27 1 .24 .985L.035 .87Q0 .85 0 .81V.05Q0 0 .04 0Z"/></clipPath>
+  <clipPath id="gz-clip-pentagon" clipPathUnits="objectBoundingBox"><path d="M 0.0 0.3899 A 0.1149 0.1532 0 0 1 0.078 0.2447 L 0.5718 0.0218 A 0.132 0.1759 0 0 1 0.6667 0.027 L 0.9289 0.1788 A 0.1182 0.1577 0 0 1 1.0 0.3234 L 1.0 0.8667 A 0.1 0.1333 0 0 1 0.9 1.0 L 0.1 1.0 A 0.1 0.1333 0 0 1 0.0 0.8667 L 0.0 0.3899 Z"/></clipPath>
+  <!-- Фото в «Чому GREEBZ» (Figma 812:10874 і 812:10875, 316×260): скіс знизу і дах зі зламом праворуч. -->
+  <clipPath id="gz-clip-photo-slant" clipPathUnits="objectBoundingBox"><path transform="scale(.003164556962 .003846153846)" d="M0 24Q0 0 24 0H292Q316 0 316 24V204.7Q316 226.3 294.5 228.6L26.6 257.2Q0 260 0 233.3Z"/></clipPath>
+  <clipPath id="gz-clip-photo-roof" clipPathUnits="objectBoundingBox"><path transform="scale(.003164556962 .003846153846)" d="M0 80Q0 61.7 17.6 56.8L211.6 3.3Q223.5 0 233.1 7.8L307.2 68.2Q316 75.4 316 86.8V236Q316 260 292 260H24Q0 260 0 236Z"/></clipPath>
+</defs>
+</svg>

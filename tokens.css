@@ -1,0 +1,265 @@
+/* ============================================================================
+   GREEBZ — Design Tokens
+   Source of truth: design-system/BRAND-KEY.md  (derived from ../brand-assets/brandbook/Brandbook.pdf)
+
+   The brand is dark-only by design: black is 50% of every composition
+   (Brandbook p. 29). There is no light mode — light surfaces exist as
+   accent sections, not as a theme.
+   ========================================================================== */
+
+:root {
+  /* ---- Core palette (Brandbook p. 28) ---------------------------------- */
+  --gz-black:            #000000; /* Deep Black    · Pantone Process Black C */
+  --gz-tan:              #E3C195; /* Light Tan     · Pantone 719 C          */
+  --gz-white:            #FFFFFF; /* Paper White                            */
+
+  /* ---- Secondary palette ----------------------------------------------- */
+  --gz-gray:             #B6B6B6; /* Cool Gray      · Pantone 2330 C */
+  --gz-coral:            #FFA374; /* Coral          · Pantone 1555 C */
+  --gz-maple:            #ECA245; /* Autumn Maple   · Pantone 4009 C */
+  --gz-sugar:            #3D3428; /* Brown Sugar    · Pantone 7504 C */
+  --gz-green:            #A0CF7E; /* Light Green    · Pantone 359 C  */
+  --gz-lavender:         #C4B3F4; /* Light Lavender · Pantone 263 C  */
+  --gz-sky:              #B8D6EF; /* Sky Blue       · Pantone 291 C  */
+
+  /* ---- Surfaces: нейтральні, за Figma й рішенням 22.09.2026 (BRAND-KEY §3.4) -- */
+  --gz-surface-0:        #191919; /* canvas                              */
+  --gz-surface-1:        #000000; /* cards on the canvas                 */
+  --gz-surface-2:        #1F1F1F; /* chips, inputs, raised rows          */
+  --gz-surface-3:        #2A2A2A; /* hover / active                      */
+  /* темна поверхня поверх тану чи блакитного: у Figma це той самий #191919, що й полотно */
+  --gz-on-accent-surface: #191919;
+
+  --gz-border:           rgba(255, 255, 255, 0.14); /* hairline           */
+  --gz-border-strong:    rgba(255, 255, 255, 0.32);
+  --gz-border-tan:       rgba(227, 193, 149, 0.45); /* accent frame       */
+
+  /* ---- Semantic text --------------------------------------------------- */
+  --gz-text-heading:     var(--gz-tan);   /* H1 / display                  */
+  --gz-text-primary:     var(--gz-white); /* H2, H3, key figures           */
+  --gz-text-body:        var(--gz-gray);  /* body copy on black            */
+  --gz-text-muted:       #9A9A9A;         /* floor — do not go dimmer      */
+  --gz-on-accent-text:   rgba(0, 0, 0, 0.72); /* body copy on tan            */
+  --gz-text-on-accent-muted: rgba(0, 0, 0, 0.68); /* labels on tan, 6.4:1     */
+  --gz-on-accent-line:   rgba(0, 0, 0, 0.20); /* hairlines on tan            */
+  --gz-on-accent-input:  rgba(0, 0, 0, 0.28); /* input border on tan         */
+  --gz-on-accent-placeholder: rgba(0, 0, 0, 0.42);
+  --gz-on-accent-soft:   rgba(0, 0, 0, 0.06); /* panel on tan                */
+
+  /* ---- Error: brandbook has none; dark brick reads on tan (>4.5:1) ------ */
+  --gz-error:            #7A2410;
+  --gz-error-border:     #8E2A12;
+
+  /* ---- Type families (p. 31) ------------------------------------------- */
+  --gz-font-sans:  Onest, "Helvetica Neue", Arial, sans-serif;
+  --gz-font-mono:  "Martian Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  /* ---- Type scale ------------------------------------------------------ */
+  --gz-text-h1:          clamp(2.25rem, 4.5vw, 4rem);
+  --gz-text-h2:          clamp(1.75rem, 3vw, 2.5rem);
+  --gz-text-h3:          clamp(1.5rem, 2vw, 1.5rem);
+  --gz-text-body-lg:     1.125rem;
+  --gz-text-body-md:     1rem;
+  --gz-text-body-sm:     0.9375rem;
+  --gz-text-label:       0.75rem;
+
+  --gz-weight-light:     300;
+  --gz-weight-regular:   400;
+  --gz-weight-medium:    500;
+  --gz-weight-semibold:  600;
+
+  --gz-leading-heading:  1.15;
+  --gz-leading-body:     1.65;
+
+  --gz-tracking-heading: -0.02em;
+  --gz-tracking-label:   0.08em;
+
+  /* Heading→subhead gap (p. 32): not less than the heading's own line-height. */
+  --gz-head-sub-gap:     1.05em; /* relative to the heading font-size */
+
+  /* ---- Space (4px base) ------------------------------------------------ */
+  --gz-space-1:  4px;
+  --gz-space-2:  8px;
+  --gz-space-3:  12px;
+  --gz-space-4:  16px;
+  --gz-space-5:  24px;
+  --gz-space-6:  32px;
+  --gz-space-7:  48px;
+  --gz-space-8:  64px;
+  --gz-space-9:  96px;
+  --gz-space-10: 128px;
+  --gz-space-11: 160px;
+
+  --gz-section-y: clamp(80px, 10vw, 160px);
+  --gz-header-h:  84px; /* липка шапка: 12px + плашка 60px + 12px; від 768px — 24 + 64 + 24 = 112px */
+  --gz-container: 1440px;
+  --gz-gutter:    clamp(20px, 5.2vw, 100px); /* 100px @1920 per brandbook */
+  --gz-columns:   12;
+  --gz-col-gap:   24px;
+
+  /* ---- Radii ----------------------------------------------------------- */
+  --gz-radius-sm:   8px;    /* tags, small chips                        */
+  --gz-radius-md:   12px;   /* buttons, inputs                          */
+  --gz-radius-lg:   20px;   /* small cards                              */
+  --gz-radius-xl:   28px;   /* cards                                    */
+  --gz-radius-2xl:  44px;   /* large panels, hero, footer               */
+  --gz-radius-full: 999px;
+
+  /* ---- Motion ---------------------------------------------------------- */
+  --gz-ease:       cubic-bezier(0.2, 0, 0, 1);
+  --gz-duration-1: 120ms;
+  --gz-duration-2: 220ms;
+  --gz-duration-3: 400ms;
+
+  color-scheme: dark;
+}
+
+@media (min-width: 768px) {
+  :root { --gz-header-h: 112px; }
+}
+
+/* ============================================================================
+   Type utilities
+   ========================================================================== */
+
+.gz-h1 {
+  color: var(--gz-text-heading);
+  font-size: var(--gz-text-h1);
+  font-weight: var(--gz-weight-semibold);
+  letter-spacing: var(--gz-tracking-heading);
+  line-height: 1.05;
+}
+
+.gz-h2 {
+  color: var(--gz-text-primary);
+  font-size: var(--gz-text-h2);
+  font-weight: var(--gz-weight-medium);
+  line-height: var(--gz-leading-heading);
+  letter-spacing: -0.015em;
+}
+
+.gz-h3 {
+  color: var(--gz-text-primary);
+  font-size: var(--gz-text-h3);
+  font-weight: var(--gz-weight-medium);
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+/* Mono label / eyebrow — keep to <=10% of on-screen text. */
+.gz-label {
+  font-family: var(--gz-font-mono);
+  font-size: var(--gz-text-label);
+  font-weight: var(--gz-weight-medium);
+  letter-spacing: var(--gz-tracking-label);
+  line-height: 1.4;
+  text-transform: uppercase;
+  color: var(--gz-tan);
+}
+
+/* ============================================================================
+   Layout
+   ========================================================================== */
+
+.gz-container {
+  max-width: var(--gz-container);
+  margin-inline: auto;
+  padding-inline: var(--gz-gutter);
+}
+
+.gz-section { padding-block: var(--gz-section-y); }
+
+/* The brandbook spread: 4-col side rail (title + lead) + 8-col content. */
+.gz-spread {
+  display: grid;
+  grid-template-columns: repeat(var(--gz-columns), 1fr);
+  gap: var(--gz-col-gap);
+}
+.gz-spread > .gz-rail    { grid-column: span 4; }
+.gz-spread > .gz-content { grid-column: span 8; }
+
+@media (max-width: 900px) {
+  .gz-spread > .gz-rail,
+  .gz-spread > .gz-content { grid-column: 1 / -1; }
+}
+
+/* ============================================================================
+   Components
+   ========================================================================== */
+
+.gz-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gz-space-2);
+  padding: 14px 24px;
+  border: 1px solid transparent;
+  border-radius: var(--gz-radius-md);
+  font-family: var(--gz-font-sans);
+  font-size: var(--gz-text-body-md);
+  font-weight: var(--gz-weight-medium);
+  line-height: 1;
+  cursor: pointer;
+  transition: background var(--gz-duration-2) var(--gz-ease),
+              border-color var(--gz-duration-2) var(--gz-ease);
+}
+
+.gz-btn--primary {
+  background: var(--gz-tan);
+  color: var(--gz-black);
+}
+.gz-btn--primary:hover { background: #EBCEA8; }
+
+.gz-btn--secondary {
+  background: var(--gz-black);
+  border-color: var(--gz-white);
+  color: var(--gz-white);
+}
+.gz-btn--secondary:hover { background: var(--gz-surface-2); }
+
+.gz-btn--outline {
+  background: transparent;
+  border-color: var(--gz-tan);
+  color: var(--gz-tan);
+}
+.gz-btn--outline:hover { background: rgba(227, 193, 149, 0.1); }
+
+/* Chip — the footer marker from every brandbook page. */
+.gz-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  background: var(--gz-surface-2);
+  border: 1px solid var(--gz-border);
+  border-radius: var(--gz-radius-full);
+  font-size: var(--gz-text-body-sm);
+  color: var(--gz-gray);
+}
+
+/* Tan eyebrow pill — the label above headings on greebz.com.ua. */
+.gz-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: var(--gz-tan);
+  color: var(--gz-black);
+  border-radius: var(--gz-radius-full);
+  font-size: var(--gz-text-body-sm);
+  font-weight: var(--gz-weight-medium);
+  line-height: 1.2;
+}
+.gz-pill--dark { background: var(--gz-black); color: var(--gz-tan); }
+
+/* ============================================================================
+   Accessibility
+   ========================================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
