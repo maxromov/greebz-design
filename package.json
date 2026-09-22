@@ -8,9 +8,6 @@
     "type": "git",
     "url": "git+https://github.com/maxromov/greebz-design.git"
   },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com"
-  },
   "files": [
     "tokens.css",
     "fonts.css",
