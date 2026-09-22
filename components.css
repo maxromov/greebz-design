@@ -1,0 +1,357 @@
+/* ============================================================================
+   GREEBZ — Components
+
+   Знято з Figma 6nkDvtUkBzaOalaQ1q7bmJ, секції «Кнопки/посилання» й «Імпути»,
+   22.09.2026. Значення геометрії literal, бо радіуси макета (4–16) не збігаються
+   зі шкалою радіусів у tokens.css; кольори через токени, вони вже звірені.
+
+   Дві свідомі відмінності від макета:
+   1. Бордери не тонші за 1px. У Figma трапляються 0.4 і 0.5px: на мобільному
+      вони зникають при округленні.
+   2. Мобільні варіанти зроблено модифікаторами (--sm), а не медіазапитами:
+      дизайн-система не нав’язує сайту його брейкпоінти.
+
+   Файл незалежний від решти: підключається окремо, нічого не перевизначає.
+   Старі наближення .gz-btn / .gz-chip / .gz-pill лишаються в tokens.css.
+   ========================================================================== */
+
+/* ---- Кнопка (Figma «Button secondary») ---------------------------------- */
+
+.gz-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 45px;
+  padding: 3px 20px;
+  border: 1px solid transparent;
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gz-white);
+  font-family: var(--gz-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--gz-duration-2) var(--gz-ease),
+              border-color var(--gz-duration-2) var(--gz-ease),
+              color var(--gz-duration-2) var(--gz-ease);
+}
+
+.gz-button--sm {
+  min-height: 40px;
+  border-radius: 8px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.gz-button--fill {
+  background: var(--gz-tan);
+  color: var(--gz-black);
+}
+.gz-button--fill:hover { background: var(--gz-maple); }
+
+.gz-button--stroke {
+  border-color: var(--gz-tan);
+  color: var(--gz-tan);
+}
+.gz-button--stroke:hover {
+  border-color: var(--gz-maple);
+  color: var(--gz-maple);
+}
+
+/* На тановій або світлій плиті. */
+.gz-button--dark {
+  background: var(--gz-black);
+  border-color: var(--gz-black);
+  color: var(--gz-white);
+}
+
+.gz-button:disabled,
+.gz-button[aria-disabled="true"] {
+  pointer-events: none;
+}
+.gz-button--fill:disabled,
+.gz-button--fill[aria-disabled="true"] {
+  background: var(--gz-sys-400);
+  color: var(--gz-black);
+}
+.gz-button--stroke:disabled,
+.gz-button--stroke[aria-disabled="true"] {
+  border-color: var(--gz-sys-400);
+  color: var(--gz-sys-400);
+}
+
+/* ---- Кнопка-іконка (Figma «Icon btn», «Btn icon») ----------------------- */
+
+.gz-icon-btn {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 56px;
+  height: 56px;
+  border: 1px solid var(--gz-tan);
+  border-radius: 10px;
+  background: var(--gz-tan);
+  color: var(--gz-black);
+  cursor: pointer;
+  transition: background var(--gz-duration-2) var(--gz-ease),
+              border-color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-icon-btn:hover {
+  background: var(--gz-maple);
+  border-color: var(--gz-maple);
+}
+.gz-icon-btn--stroke {
+  background: transparent;
+  color: var(--gz-tan);
+}
+.gz-icon-btn--stroke:hover {
+  background: transparent;
+  border-color: var(--gz-maple);
+  color: var(--gz-maple);
+}
+.gz-icon-btn--md { width: 40px; height: 40px; border-radius: 8px; }
+.gz-icon-btn--sm { width: 32px; height: 32px; border-radius: 6px; }
+.gz-icon-btn:disabled,
+.gz-icon-btn[aria-disabled="true"] {
+  pointer-events: none;
+  background: var(--gz-sys-400);
+  border-color: var(--gz-sys-400);
+}
+
+/* Контурна керівна кнопка: стрілки каруселі, закриття (Figma «Control button»). */
+.gz-control {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 51px;
+  height: 51px;
+  border: 1px solid var(--gz-tan);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gz-tan);
+  cursor: pointer;
+  transition: border-color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-control--md { width: 40px; height: 40px; border-radius: 8px; }
+.gz-control:disabled,
+.gz-control[aria-disabled="true"] {
+  pointer-events: none;
+  border-color: rgba(227, 193, 149, 0.5);
+  color: rgba(227, 193, 149, 0.5);
+}
+
+/* Лічильник кількості (Figma «Quantity»). */
+.gz-qty {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 28px;
+  height: 28px;
+  border: 1px solid var(--gz-tan);
+  border-radius: 5px;
+  background: transparent;
+  color: var(--gz-tan);
+  cursor: pointer;
+}
+.gz-qty:disabled,
+.gz-qty[aria-disabled="true"] {
+  pointer-events: none;
+  border-color: rgba(227, 193, 149, 0.5);
+  color: rgba(227, 193, 149, 0.5);
+}
+
+/* ---- Вкладка (Figma «Tab») ---------------------------------------------- */
+
+.gz-tab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  min-height: 45px;
+  padding: 12px 24px;
+  border: 1px solid var(--gz-sys-300);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gz-sys-300);
+  font-family: var(--gz-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  cursor: pointer;
+  transition: border-color var(--gz-duration-2) var(--gz-ease),
+              background var(--gz-duration-2) var(--gz-ease),
+              color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-tab:hover {
+  border-color: var(--gz-white);
+  color: var(--gz-white);
+}
+.gz-tab[aria-selected="true"],
+.gz-tab--active {
+  background: var(--gz-white);
+  border-color: var(--gz-white);
+  color: var(--gz-sys-1000);
+}
+.gz-tab--sm { min-height: 37px; padding: 8px; border-radius: 8px; }
+
+/* ---- Пагінація (Figma «Pagination») ------------------------------------- */
+
+.gz-page {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 51px;
+  height: 51px;
+  border: 1px solid var(--gz-sys-400);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gz-white);
+  font-family: var(--gz-font-sans);
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 21px;
+  cursor: pointer;
+  text-decoration: none;
+}
+.gz-page:hover,
+.gz-page[aria-current="page"] { border-color: var(--gz-white); }
+.gz-page--md { width: 40px; height: 40px; border-radius: 8px; font-size: 15px; line-height: 19px; }
+.gz-page--more { width: 30px; border-color: transparent; cursor: default; }
+
+/* ---- Поле вводу (Figma «Input») ----------------------------------------- */
+
+.gz-input {
+  width: 100%;
+  min-height: 52px;
+  padding: 3px 20px;
+  border: 1px solid var(--gz-sys-300);
+  border-radius: 10px;
+  background: transparent;
+  color: var(--gz-white);
+  font-family: var(--gz-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  transition: border-color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-input::placeholder {
+  color: var(--gz-sys-300);
+  font-size: 14px;
+  line-height: 19px;
+}
+/* Стан «заповнене» ловимо через :placeholder-shown, тому в полі має бути
+   атрибут placeholder (хоча б пробіл), інакше селектор спрацює завжди. */
+.gz-input:hover,
+.gz-input:focus,
+.gz-input:not(:placeholder-shown) { border-color: var(--gz-white); }
+.gz-input:focus-visible {
+  outline: 2px solid var(--gz-tan);
+  outline-offset: 2px;
+}
+
+textarea.gz-input {
+  min-height: 140px;
+  padding: 13px 20px;
+  resize: vertical;
+}
+
+/* Поле на тановій або світлій плиті. */
+.gz-input--on-accent {
+  border-color: var(--gz-sys-800);
+  color: var(--gz-sys-1000);
+}
+.gz-input--on-accent::placeholder { color: var(--gz-sys-800); }
+.gz-input--on-accent:hover,
+.gz-input--on-accent:focus,
+.gz-input--on-accent:not(:placeholder-shown) { border-color: var(--gz-sys-1000); }
+
+.gz-input[aria-invalid="true"] { border-color: var(--gz-error-on-dark); }
+.gz-input--on-accent[aria-invalid="true"] { border-color: var(--gz-error); }
+
+.gz-input-error {
+  font-family: var(--gz-font-sans);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 19px;
+  color: var(--gz-error-on-dark);
+}
+.gz-input-error--on-accent { color: var(--gz-error); }
+
+/* ---- Посилання (Figma «Link», «Nav Link») ------------------------------- */
+
+.gz-link {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px;
+  border-radius: 5px;
+  color: var(--gz-white);
+  font-family: var(--gz-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  text-decoration: none;
+  transition: background var(--gz-duration-2) var(--gz-ease);
+}
+.gz-link:hover { background: var(--gz-sys-800); }
+.gz-link--on-accent { color: var(--gz-sys-900); }
+.gz-link--on-accent:hover { background: rgba(227, 193, 149, 0.5); }
+
+.gz-nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 32px;
+  padding: 2px 12px;
+  border-radius: 10px;
+  color: var(--gz-white);
+  font-family: var(--gz-font-sans);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 21px;
+  text-decoration: none;
+  transition: background var(--gz-duration-2) var(--gz-ease),
+              color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-nav-link:hover { color: var(--gz-maple); }
+.gz-nav-link[aria-current]:not([aria-current="false"]),
+.gz-nav-link--current { background: rgba(227, 193, 149, 0.5); }
+.gz-nav-link--on-accent { color: var(--gz-sys-900); }
+
+/* ---- Кнопка соцмережі (Figma «Social media btn») ------------------------ */
+
+.gz-social {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 45px;
+  height: 45px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, 0.15);
+  color: var(--gz-white);
+  transition: background var(--gz-duration-2) var(--gz-ease),
+              color var(--gz-duration-2) var(--gz-ease);
+}
+.gz-social:hover {
+  background: var(--gz-white);
+  color: var(--gz-black);
+}
+.gz-social--sm { width: 32px; height: 32px; border-radius: 4px; }
+.gz-social--on-accent {
+  background: rgba(61, 52, 40, 0.15);
+  color: var(--gz-sugar);
+}
+.gz-social--on-accent:hover {
+  background: var(--gz-sugar);
+  color: var(--gz-tan);
+}
+
+/* ---- Доступність --------------------------------------------------------- */
+
+:where(.gz-button, .gz-icon-btn, .gz-control, .gz-qty, .gz-tab, .gz-page,
+       .gz-link, .gz-nav-link, .gz-social):focus-visible {
+  outline: 2px solid var(--gz-tan);
+  outline-offset: 3px;
+}
