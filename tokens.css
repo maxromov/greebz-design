@@ -65,10 +65,20 @@
   --gz-font-sans:  Onest, "Helvetica Neue", Arial, sans-serif;
   --gz-font-mono:  "Martian Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
-  /* ---- Type scale ------------------------------------------------------ */
-  --gz-text-h1:          clamp(2.25rem, 4.5vw, 4rem);
-  --gz-text-h2:          clamp(1.75rem, 3vw, 2.5rem);
-  --gz-text-h3:          clamp(1.5rem, 2vw, 1.5rem);
+  /* ---- Type scale: знято з Figma, кадр Fonts (375 / 744 / 1440 / 1920) ---
+     Два сегменти з переломом на 744px: одна пряма крізь усі чотири точки
+     макета не проходить, крива дизайнера вигнута. Влучає точно в 375, 744
+     і 1440, на 1920 різниця не більша за 2px. Нижче 744 діє цей блок,
+     вище , медіазапит наприкінці файлу. */
+  --gz-text-display:     clamp(26px, calc(11.77px + 3.794vw), 40px);
+  --gz-text-h1:          clamp(32px, calc(17.77px + 3.794vw), 46px);
+  --gz-text-h2:          clamp(26px, calc(15.84px + 2.71vw), 36px);
+  --gz-text-h3:          clamp(24px, calc(14.85px + 2.439vw), 33px);
+  --gz-text-h4:          clamp(22px, calc(19.97px + 0.542vw), 24px);
+  --gz-text-h5:          clamp(18px, calc(14.95px + 0.813vw), 21px);
+
+  /* Текст не меншає за 16px. У Figma body на телефоні 14px, але це звичка
+     друку: на вебі 14px у полі вводу змушує iOS зумити сторінку. */
   --gz-text-body-lg:     1.125rem;
   --gz-text-body-md:     1rem;
   --gz-text-body-sm:     0.9375rem;
@@ -78,8 +88,10 @@
   --gz-weight-regular:   400;
   --gz-weight-medium:    500;
   --gz-weight-semibold:  600;
+  --gz-weight-bold:      700;   /* H big і H1 у Figma саме 700 */
 
-  --gz-leading-heading:  1.15;
+  --gz-leading-heading:  1.1;   /* у Figma 1.08-1.11 на всіх заголовках */
+  --gz-leading-h5:       1.3;   /* H5 єдиний вибивається: 1.17-1.33      */
   --gz-leading-body:     1.65;
 
   --gz-tracking-heading: -0.02em;
@@ -108,12 +120,16 @@
   --gz-columns:   12;
   --gz-col-gap:   24px;
 
-  /* ---- Radii ----------------------------------------------------------- */
-  --gz-radius-sm:   8px;    /* tags, small chips                        */
-  --gz-radius-md:   12px;   /* buttons, inputs                          */
-  --gz-radius-lg:   20px;   /* small cards                              */
-  --gz-radius-xl:   28px;   /* cards                                    */
-  --gz-radius-2xl:  44px;   /* large panels, hero, footer               */
+  /* ---- Radii: тільки значення, які справді є в макеті --------------------
+     Пораховано по всіх екранах холста Design: 16 трапляється 149 разів,
+     5 , 110, 20 , 52, 50 , 40, 24 , 25, 10 , 20. Колишні 12, 28 і 44
+     не трапляються жодного разу, їх вигадали на око. */
+  --gz-radius-xs:    5px;   /* чипи, теги, лічильник кількості          */
+  --gz-radius-sm:   10px;   /* кнопки, поля, вкладки, керівні кнопки    */
+  --gz-radius-md:   16px;   /* малі картки, найчастіший радіус макета   */
+  --gz-radius-lg:   20px;   /* панелі                                   */
+  --gz-radius-xl:   24px;   /* картки                                   */
+  --gz-radius-2xl:  50px;   /* плити на всю ширину, hero, підвал        */
   --gz-radius-full: 999px;
 
   /* ---- Motion ---------------------------------------------------------- */
@@ -123,6 +139,18 @@
   --gz-duration-3: 400ms;
 
   color-scheme: dark;
+}
+
+@media (min-width: 744px) {
+  :root {
+    /* Другий сегмент шкали: від планшета до десктопа. */
+    --gz-text-display: clamp(40px, calc(18.62px + 2.8736vw), 67px);
+    --gz-text-h1:      clamp(46px, calc(37.45px + 1.1494vw), 61px);
+    --gz-text-h2:      clamp(36px, calc(23.17px + 1.7241vw), 54px);
+    --gz-text-h3:      clamp(33px, calc(29.79px + 0.431vw), 40px);
+    --gz-text-h4:      clamp(24px, calc(15.45px + 1.1494vw), 35px);
+    --gz-text-h5:      clamp(21px, calc(19.93px + 0.1437vw), 24px);
+  }
 }
 
 @media (min-width: 768px) {
@@ -136,9 +164,9 @@
 .gz-h1 {
   color: var(--gz-text-heading);
   font-size: var(--gz-text-h1);
-  font-weight: var(--gz-weight-semibold);
+  font-weight: var(--gz-weight-bold);
   letter-spacing: var(--gz-tracking-heading);
-  line-height: 1.05;
+  line-height: var(--gz-leading-heading);
 }
 
 .gz-h2 {

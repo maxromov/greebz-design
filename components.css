@@ -2,8 +2,10 @@
    GREEBZ — Components
 
    Знято з Figma 6nkDvtUkBzaOalaQ1q7bmJ, секції «Кнопки/посилання» й «Імпути»,
-   22.09.2026. Значення геометрії literal, бо радіуси макета (4–16) не збігаються
-   зі шкалою радіусів у tokens.css; кольори через токени, вони вже звірені.
+   22.09.2026. Радіуси тепер через токени: шкалу в tokens.css підтягнуто до
+   макета 22.09, і вигаданих значень у ній більше нема. Дрібні одноразові
+   радіуси мобільних контролів (8, 6, 4) лишились числами, вони в шкалу
+   не входять. Кольори через токени, вони звірені з кадром Colors.
 
    Дві свідомі відмінності від макета:
    1. Бордери не тонші за 1px. У Figma трапляються 0.4 і 0.5px: на мобільному
@@ -25,7 +27,7 @@
   min-height: 45px;
   padding: 3px 20px;
   border: 1px solid transparent;
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: transparent;
   color: var(--gz-white);
   font-family: var(--gz-font-sans);
@@ -92,7 +94,7 @@
   width: 56px;
   height: 56px;
   border: 1px solid var(--gz-tan);
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: var(--gz-tan);
   color: var(--gz-black);
   cursor: pointer;
@@ -129,7 +131,7 @@
   width: 51px;
   height: 51px;
   border: 1px solid var(--gz-tan);
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: transparent;
   color: var(--gz-tan);
   cursor: pointer;
@@ -151,7 +153,7 @@
   width: 28px;
   height: 28px;
   border: 1px solid var(--gz-tan);
-  border-radius: 5px;
+  border-radius: var(--gz-radius-xs);
   background: transparent;
   color: var(--gz-tan);
   cursor: pointer;
@@ -173,7 +175,7 @@
   min-height: 45px;
   padding: 12px 24px;
   border: 1px solid var(--gz-sys-300);
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: transparent;
   color: var(--gz-sys-300);
   font-family: var(--gz-font-sans);
@@ -206,7 +208,7 @@
   width: 51px;
   height: 51px;
   border: 1px solid var(--gz-sys-400);
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: transparent;
   color: var(--gz-white);
   font-family: var(--gz-font-sans);
@@ -228,7 +230,7 @@
   min-height: 52px;
   padding: 3px 20px;
   border: 1px solid var(--gz-sys-300);
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   background: transparent;
   color: var(--gz-white);
   font-family: var(--gz-font-sans);
@@ -286,7 +288,7 @@ textarea.gz-input {
   display: inline-flex;
   align-items: center;
   padding: 6px;
-  border-radius: 5px;
+  border-radius: var(--gz-radius-xs);
   color: var(--gz-white);
   font-family: var(--gz-font-sans);
   font-size: 16px;
@@ -305,7 +307,7 @@ textarea.gz-input {
   gap: 12px;
   min-height: 32px;
   padding: 2px 12px;
-  border-radius: 10px;
+  border-radius: var(--gz-radius-sm);
   color: var(--gz-white);
   font-family: var(--gz-font-sans);
   font-size: 16px;
