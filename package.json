@@ -14,6 +14,7 @@
   "files": [
     "tokens.css",
     "fonts.css",
+    "shape.js",
     "shapes.svg",
     "fonts",
     "logo",
@@ -26,6 +27,7 @@
     "./logo/logo.svg": "./logo/logo.svg",
     "./logo/mark.svg": "./logo/mark.svg",
     "./fonts/*": "./fonts/*",
-    "./BRAND-KEY.md": "./BRAND-KEY.md"
+    "./BRAND-KEY.md": "./BRAND-KEY.md",
+    "./shape.js": "./shape.js"
   }
 }

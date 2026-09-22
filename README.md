@@ -12,7 +12,10 @@
 | `fonts.css` | `@font-face` для Onest і Martian Mono |
 | `fonts/*.woff2` | самі шрифти, канонічні копії |
 | `logo/logo.svg`, `logo/mark.svg` | логотип і знак |
-| `shapes.svg` | фірмова форма |
+| `shapes.svg` | фірмова форма, 9 готових спрайтом |
+| `shape.js` | генератор фірмової форми: будує SVG-шлях з оптичною компенсацією радіусів під реальний розмір блока |
+| `brandbook/Brandbook.pdf` | джерело норми, 76 сторінок. У пакет не потрапляє |
+| `brandbook/logo-print/` | логотипи для друку й партнерів, powered-by. У пакет не потрапляє |
 
 Джерела: брендбук `Brandbook.pdf` (Make Sense, 2025) і Figma
 `6nkDvtUkBzaOalaQ1q7bmJ`, сторінка Design. Брендбук дає інваріанти бренду,

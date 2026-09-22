@@ -19,14 +19,25 @@
   --gz-maple:            #ECA245; /* Autumn Maple   · Pantone 4009 C */
   --gz-sugar:            #3D3428; /* Brown Sugar    · Pantone 7504 C */
   --gz-green:            #A0CF7E; /* Light Green    · Pantone 359 C  */
-  --gz-lavender:         #C4B3F4; /* Light Lavender · Pantone 263 C  */
+  --gz-lavender:         #C3B2F4; /* Light Lavender · Pantone 263 C  */
   --gz-sky:              #B8D6EF; /* Sky Blue       · Pantone 291 C  */
 
+  /* ---- Нейтральна шкала (Figma, кадр Colors, група System) -------------- */
+  --gz-sys-1000:         #151515;
+  --gz-sys-900:          #1C1C1C;
+  --gz-sys-800:          #393939;
+  --gz-sys-700:          #3E382F;
+  --gz-sys-600:          #717171;
+  --gz-sys-500:          #8E8E8E;
+  --gz-sys-400:          #AEAEAE;
+  --gz-sys-300:          #C6C6C6;
+  --gz-sys-200:          #E3E3E3;
+
   /* ---- Surfaces: нейтральні, за Figma й рішенням 22.09.2026 (BRAND-KEY §3.4) -- */
-  --gz-surface-0:        #191919; /* canvas                              */
+  --gz-surface-0:        #191919; /* canvas; у Figma названий BG         */
   --gz-surface-1:        #000000; /* cards on the canvas                 */
-  --gz-surface-2:        #1F1F1F; /* chips, inputs, raised rows          */
-  --gz-surface-3:        #2A2A2A; /* hover / active                      */
+  --gz-surface-2:        var(--gz-sys-900); /* chips, inputs, raised rows */
+  --gz-surface-3:        var(--gz-sys-800); /* hover / active            */
   /* темна поверхня поверх тану чи блакитного: у Figma це той самий #191919, що й полотно */
   --gz-on-accent-surface: #191919;
 
@@ -46,9 +57,9 @@
   --gz-on-accent-placeholder: rgba(0, 0, 0, 0.42);
   --gz-on-accent-soft:   rgba(0, 0, 0, 0.06); /* panel on tan                */
 
-  /* ---- Error: brandbook has none; dark brick reads on tan (>4.5:1) ------ */
-  --gz-error:            #7A2410;
-  --gz-error-border:     #8E2A12;
+  /* ---- Error (Figma, кадр Colors, група System) ------------------------- */
+  --gz-error:            #A30B0B; /* на світлому: тан, біла картка       */
+  --gz-error-on-dark:    #E55353; /* на чорному й на полотні             */
 
   /* ---- Type families (p. 31) ------------------------------------------- */
   --gz-font-sans:  Onest, "Helvetica Neue", Arial, sans-serif;
