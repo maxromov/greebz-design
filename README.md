@@ -13,6 +13,8 @@
 | `fonts.css` | `@font-face` для Onest і Martian Mono |
 | `fonts/*.woff2` | самі шрифти, канонічні копії |
 | `logo/logo.svg`, `logo/mark.svg` | логотип і знак |
+| `icons/brand/` | 14 брендових піктограм зі стор. 38 брендбука, кожна в трьох варіантах (див. «Іконки») |
+| `icons/ui/` | 42 інтерфейсні іконки з кадру `Icon` у Figma, 24×24, `currentColor` |
 | `shapes.svg` | фірмова форма, 9 готових спрайтом |
 | `shape.js` | генератор фірмової форми: будує SVG-шлях з оптичною компенсацією радіусів під реальний розмір блока |
 | `brandbook/Brandbook.pdf` | джерело норми, 76 сторінок. У пакет не потрапляє |
@@ -91,3 +93,31 @@ npm i github:maxromov/greebz-design#v1.0.0
 У `tokens.css` лишаються старіші наближення `.gz-btn`, `.gz-chip`, `.gz-pill`:
 на них стоїть greebz.shop. Вони не конфліктують з новим шаром, але колись
 сайт треба перевести на `.gz-button` і прибрати дублювання.
+
+## Іконки
+
+`icons/brand/` , 14 піктограм зі стор. 38 брендбука, витягнуті з PDF як вектор і
+приведені до токенів кольору. Імена: `dumbbell`, `bolt`, `brain`, `meditation`,
+`chevrons-forward`, `heart`, `shield`, `molecule`, `g-mark`, `walk`, `chevrons-back`,
+`flame`, `sun`, `bacteria`. Лист для ока: `icons/brand-sheet.png`.
+
+Три варіанти на кожну, як у BRAND-KEY §8:
+
+| Файл | Що це | Де доречно |
+| --- | --- | --- |
+| `<назва>.svg` | контейнер фірмового кольору, гліф вирізано наскрізь | на чорному: гліф читається чорним, на будь-якому іншому тлі , кольором тла |
+| `<назва>-inverse.svg` | чорний контейнер, кольоровий гліф | на полотні `#191919` і на світлих плитах |
+| `<назва>-glyph.svg` | лише гліф, `fill="currentColor"` | у тексті, кнопках, списках; колір задає CSS |
+
+Кольори контейнерів закріплені за піктограмами так, як на стор. 38, і не
+змінюються: це частина впізнаваності набору.
+
+### Інтерфейсні
+
+`icons/ui/` , 42 іконки з кадру `Icon` у Figma (24.09.2026), кожна `fill="currentColor"`,
+колір задає CSS. Усі 24×24, крім `check-mark` і `cross` (12×12, як у макеті).
+Лист для ока: `icons/ui-sheet.png`.
+
+`loupe`, `down-arrow`, `search`, `cart`, `arrow-up`, `arron`, `instagram`, `facebook`, `tiktok`, `phone`, `email`, `filter`, `check-mark`, `cross`, `star`, `star-stroke`, `minus`, `plus`, `gift`, `discount`, `warning`, `telegram`, `viber`, `human`, `brainstorm`, `molecule`, `rocket`, `linkedin`, `bracket`, `calendar`, `eye`, `play`, `link`, `twitter`, `check-marks`, `time`, `money`, `delivery`, `delete`, `lock`, `menu`, `down-arrow-big`.
+
+Джерело , `figma/Icon-frame-2026-09-24.svg`, весь кадр одним файлом.
