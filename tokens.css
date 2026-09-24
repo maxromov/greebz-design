@@ -226,41 +226,7 @@
    Components
    ========================================================================== */
 
-.gz-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--gz-space-2);
-  padding: 14px 24px;
-  border: 1px solid transparent;
-  border-radius: var(--gz-radius-md);
-  font-family: var(--gz-font-sans);
-  font-size: var(--gz-text-body-md);
-  font-weight: var(--gz-weight-medium);
-  line-height: 1;
-  cursor: pointer;
-  transition: background var(--gz-duration-2) var(--gz-ease),
-              border-color var(--gz-duration-2) var(--gz-ease);
-}
-
-.gz-btn--primary {
-  background: var(--gz-tan);
-  color: var(--gz-black);
-}
-.gz-btn--primary:hover { background: #EBCEA8; }
-
-.gz-btn--secondary {
-  background: var(--gz-black);
-  border-color: var(--gz-white);
-  color: var(--gz-white);
-}
-.gz-btn--secondary:hover { background: var(--gz-surface-2); }
-
-.gz-btn--outline {
-  background: transparent;
-  border-color: var(--gz-tan);
-  color: var(--gz-tan);
-}
-.gz-btn--outline:hover { background: rgba(227, 193, 149, 0.1); }
+/* Кнопки живуть у components.css (.gz-button). Старий .gz-btn прибрано у v1.4.0. */
 
 /* Chip — the footer marker from every brandbook page. */
 .gz-chip {
