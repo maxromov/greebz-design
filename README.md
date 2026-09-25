@@ -3,6 +3,8 @@
 Єдина дизайн-система бренду. Звідси її беруть усі сайти GREEBZ: і B2C-магазин,
 і B2B-сайт. Правимо тут, в одному місці.
 
+> До 25.09.2026 репозиторій і пакет називалися `greebz-design`. GitHub переадресовує старі посилання, але новий тег ставити вже на нову назву.
+
 ## Що всередині
 
 | Файл | Що це |
@@ -28,7 +30,7 @@ Figma дає веб-шар. Де вони розходяться, рішення
 ## Як підключити на сайті
 
 ```
-npm i github:maxromov/greebz-design#v1.0.0
+npm i github:maxromov/greebz-brand-key#v1.7.0
 ```
 
 Репозиторій публічний, тому ані токена, ані реєстру не треба: Vercel ставить
@@ -38,8 +40,8 @@ npm i github:maxromov/greebz-design#v1.0.0
 У головному css сайту:
 
 ```css
-@import "@maxromov/greebz-design/tokens.css";
-@import "@maxromov/greebz-design/fonts.css";
+@import "@maxromov/greebz-brand-key/tokens.css";
+@import "@maxromov/greebz-brand-key/fonts.css";
 ```
 
 **Шрифти.** `fonts.css` посилається на `/fonts/*.woff2`, бо сайти
@@ -68,8 +70,8 @@ npm i github:maxromov/greebz-design#v1.0.0
 перевизначає:
 
 ```css
-@import "@maxromov/greebz-design/tokens.css";
-@import "@maxromov/greebz-design/components.css";
+@import "@maxromov/greebz-brand-key/tokens.css";
+@import "@maxromov/greebz-brand-key/components.css";
 ```
 
 | Клас | Що це | Модифікатори |

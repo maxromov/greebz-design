@@ -1,12 +1,12 @@
 {
-  "name": "@maxromov/greebz-design",
-  "version": "1.6.0",
-  "description": "Дизайн-система GREEBZ: токени, типографіка, логотип, фірмова форма.",
+  "name": "@maxromov/greebz-brand-key",
+  "version": "1.7.0",
+  "description": "Ключ бренду GREEBZ: вербальне ядро, токени, типографіка, логотип, форми, іконки, патерни.",
   "type": "module",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/maxromov/greebz-design.git"
+    "url": "git+https://github.com/maxromov/greebz-brand-key.git"
   },
   "files": [
     "tokens.css",
