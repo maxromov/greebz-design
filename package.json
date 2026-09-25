@@ -1,6 +1,6 @@
 {
   "name": "@maxromov/greebz-design",
-  "version": "1.5.0",
+  "version": "1.6.0",
   "description": "Дизайн-система GREEBZ: токени, типографіка, логотип, фірмова форма.",
   "type": "module",
   "license": "UNLICENSED",
@@ -17,7 +17,8 @@
     "fonts",
     "logo",
     "BRAND-KEY.md",
-    "icons"
+    "icons",
+    "patterns"
   ],
   "exports": {
     "./tokens.css": "./tokens.css",
@@ -29,6 +30,7 @@
     "./BRAND-KEY.md": "./BRAND-KEY.md",
     "./shape.js": "./shape.js",
     "./components.css": "./components.css",
-    "./icons/*": "./icons/*"
+    "./icons/*": "./icons/*",
+    "./patterns/*": "./patterns/*"
   }
 }

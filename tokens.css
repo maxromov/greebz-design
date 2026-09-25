@@ -95,7 +95,7 @@
   --gz-leading-body:     1.65;
 
   --gz-tracking-heading: -0.02em;
-  --gz-tracking-label:   0.08em;
+  --gz-tracking-label:   0.12em;
 
   /* Heading→subhead gap (p. 32): not less than the heading's own line-height. */
   --gz-head-sub-gap:     1.05em; /* relative to the heading font-size */
@@ -116,7 +116,7 @@
   --gz-section-y: clamp(80px, 10vw, 160px);
   --gz-header-h:  84px; /* липка шапка: 12px + плашка 60px + 12px; від 768px — 24 + 64 + 24 = 112px */
   --gz-container: 1440px;
-  --gz-gutter:    clamp(20px, 5.2vw, 100px); /* 100px @1920 per brandbook */
+  --gz-gutter:    clamp(16px, 4.166667vw, 60px); /* Figma: контейнер 1320 у кадрі 1440 → поля 60; нижче 768px — 12 */
   --gz-columns:   12;
   --gz-col-gap:   24px;
 
@@ -155,6 +155,10 @@
 
 @media (min-width: 768px) {
   :root { --gz-header-h: 112px; }
+}
+
+@media (max-width: 767px) {
+  :root { --gz-gutter: 12px; }
 }
 
 /* ============================================================================
